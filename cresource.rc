@@ -1,0 +1,31 @@
+#include "D:\masm32\include\RESOURCE.h"
+#include "resource.h"
+
+
+WINDOW_SETTINGS DIALOG 100, 100, 160, 120
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_DLGFRAME | DS_CENTER
+FONT 10, "MS Shell Dlg"
+CAPTION "Settings"
+{
+    EDITTEXT        EDITBOX_X_LEFT, 55, 24, 30, 12, ES_AUTOHSCROLL
+    EDITTEXT        EDITBOX_X_RIGHT, 129, 24, 30, 12, ES_AUTOHSCROLL
+    EDITTEXT        EDITBOX_Y_UP, 129, 60, 30, 12, ES_AUTOHSCROLL
+    EDITTEXT        EDITBOX_Y_DOWN, 55, 60, 30, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", BUTTON_OK, 55, 99, 30, 14
+    PUSHBUTTON      "Cancel", BUTTON_CANCEL, 129, 99, 30, 14
+    LTEXT           "X:         from", -1, 6, 24, 49, 12
+    LTEXT           "Y:         from", -1, 6, 60, 49, 12
+    CTEXT           "to", -1, 85, 24, 44, 12
+    CTEXT           "to", -1, 85, 60, 44, 12
+}
+
+CMenu MENU
+{
+    POPUP "&File"
+    {
+        MENUITEM "&Settings", BUTTON_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit", BUTTON_EXIT
+    }
+    MENUITEM "&About", BUTTON_ABOUT
+}
